@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("500 - Internal Server Error") }} — {{ _("AutoDrop") }}{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto text-center py-16 px-4">
+    <div class="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 mx-auto mb-6 text-2xl font-bold">
+        ⚠️
+    </div>
+
+    <h1 class="text-3xl font-bold tracking-tight text-white mb-3">
+        500 - {{ _("Internal Server Error") }}
+    </h1>
+    <p class="text-base text-slate-400 mb-8">
+        {{ _("An unexpected error occurred while processing your request. Please try again later.") }}
+    </p>
+
+    <a href="/"
+       class="inline-flex items-center justify-center py-3 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-600/30 transition">
+        {{ _("Return to Home") }}
+    </a>
+</div>
+{% endblock %}

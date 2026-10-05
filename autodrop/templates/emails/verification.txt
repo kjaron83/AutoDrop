@@ -1,0 +1,7 @@
+Welcome to {{ app_name }}, {{ user_name }}!
+
+Thank you for registering. Please confirm your email address by opening the following link in your browser:
+
+{{ verification_url }}
+
+If you did not register for {{ app_name }}, please disregard this email.

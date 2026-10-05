@@ -1,0 +1,626 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-05 10:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: autodrop/core/dependencies.py:55
+msgid "Authentication required"
+msgstr ""
+
+#: autodrop/core/dependencies.py:67
+msgid "Access forbidden: Administrator privileges required."
+msgstr ""
+
+#: autodrop/core/validation.py:51 autodrop/core/validation.py:57
+#: autodrop/core/validation.py:120 autodrop/core/validation.py:126
+#, python-brace-format
+msgid "'{field}' is required."
+msgstr ""
+
+#: autodrop/core/validation.py:69
+#, python-brace-format
+msgid "'{field}' must be a valid number."
+msgstr ""
+
+#: autodrop/core/validation.py:80
+#, python-brace-format
+msgid "'{field}' must be a valid whole number."
+msgstr ""
+
+#: autodrop/core/validation.py:86
+#, python-brace-format
+msgid "'{field}' must be at least {min_val}."
+msgstr ""
+
+#: autodrop/core/validation.py:92
+#, python-brace-format
+msgid "'{field}' must be at most {max_val}."
+msgstr ""
+
+#: autodrop/core/validation.py:135
+#, python-brace-format
+msgid "'{field}' must be a valid date in YYYY-MM-DD format."
+msgstr ""
+
+#: autodrop/core/validation.py:149
+#, python-brace-format
+msgid "'{field}' must be a valid time in HH:MM format."
+msgstr ""
+
+#: autodrop/core/validation.py:157
+#, python-brace-format
+msgid "'{field}' must be a valid date and time."
+msgstr ""
+
+#: autodrop/routes/admin_users.py:101 autodrop/routes/admin_users.py:129
+#: autodrop/routes/admin_users.py:162
+msgid "User not found."
+msgstr ""
+
+#: autodrop/routes/admin_users.py:148
+#, python-format
+msgid "User '%(name)s' updated successfully."
+msgstr ""
+
+#: autodrop/routes/auth.py:59 autodrop/routes/auth.py:278
+msgid "Password must be at least 8 characters long."
+msgstr ""
+
+#: autodrop/routes/auth.py:246
+msgid "Password reset link is invalid or has expired."
+msgstr ""
+
+#: autodrop/routes/auth.py:270 autodrop/routes/profile.py:81
+msgid "Passwords do not match."
+msgstr ""
+
+#: autodrop/routes/profile.py:59
+msgid "Profile updated successfully."
+msgstr ""
+
+#: autodrop/services/auth.py:42
+msgid "An account with this email address already exists."
+msgstr ""
+
+#: autodrop/services/auth.py:65
+msgid "Registration successful! Please check your email to verify your account."
+msgstr ""
+
+#: autodrop/services/auth.py:101
+msgid "Invalid or already used verification token."
+msgstr ""
+
+#: autodrop/services/auth.py:104
+msgid "This verification link has expired. Please request a new one."
+msgstr ""
+
+#: autodrop/services/auth.py:112
+msgid "Your email has been successfully verified! You can now log in."
+msgstr ""
+
+#: autodrop/services/auth.py:120
+msgid "If an account exists with this email, a verification link has been sent."
+msgstr ""
+
+#: autodrop/services/auth.py:123
+msgid "This account is already verified. You can log in."
+msgstr ""
+
+#: autodrop/services/auth.py:131
+msgid "A new verification link has been sent to your email."
+msgstr ""
+
+#: autodrop/services/auth.py:142
+msgid "Invalid email or password."
+msgstr ""
+
+#: autodrop/services/auth.py:145
+msgid "Your account has been deactivated. Please contact the administrator."
+msgstr ""
+
+#: autodrop/services/auth.py:148
+msgid "Your email is not verified. Please check your inbox or request a new link."
+msgstr ""
+
+#: autodrop/services/auth.py:157 autodrop/services/auth.py:182
+msgid ""
+"If an account exists with this email, password reset instructions have "
+"been sent."
+msgstr ""
+
+#: autodrop/services/auth.py:202
+msgid "This password reset link is invalid or has expired."
+msgstr ""
+
+#: autodrop/services/auth.py:209
+msgid "Your password has been reset successfully. You can now log in."
+msgstr ""
+
+#: autodrop/services/auth.py:220
+msgid "Incorrect current password."
+msgstr ""
+
+#: autodrop/services/auth.py:223
+msgid "New password must be at least 8 characters long."
+msgstr ""
+
+#: autodrop/services/auth.py:227
+msgid "Your password has been changed successfully."
+msgstr ""
+
+#: autodrop/templates/base.html:6
+msgid "AutoDrop Engine 🚀"
+msgstr ""
+
+#: autodrop/templates/base.html:66 autodrop/templates/base.html:106
+msgid "Users"
+msgstr ""
+
+#: autodrop/templates/base.html:73 autodrop/templates/base.html:112
+msgid "Log Out"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:34
+#: autodrop/templates/auth/register.html:53 autodrop/templates/base.html:80
+#: autodrop/templates/base.html:118 autodrop/templates/index.html:28
+msgid "Sign In"
+msgstr ""
+
+#: autodrop/templates/base.html:84 autodrop/templates/base.html:122
+msgid "Register"
+msgstr ""
+
+#: autodrop/templates/base.html:159
+msgid "AutoDrop Engine &copy; Headless Dropshipping E-Commerce Platform."
+msgstr ""
+
+#: autodrop/templates/index.html:3
+msgid "AutoDrop Engine 🚀 — Headless Dropshipping Platform"
+msgstr ""
+
+#: autodrop/templates/index.html:11
+msgid "Zero-Admin Headless Dropshipping Node"
+msgstr ""
+
+#: autodrop/templates/index.html:15
+msgid "Next-Generation"
+msgstr ""
+
+#: autodrop/templates/index.html:15
+msgid "E-Commerce Engine"
+msgstr ""
+
+#: autodrop/templates/index.html:19
+msgid ""
+"Automated catalog ingestion, real-time inventory buffering, instant order"
+" dispatch, and fiscal compliance designed for high-performance CEE "
+"commerce."
+msgstr ""
+
+#: autodrop/templates/index.html:25
+msgid "Get Started"
+msgstr ""
+
+#: autodrop/templates/index.html:33
+msgid "Welcome back,"
+msgstr ""
+
+#: autodrop/templates/index.html:36
+msgid "Edit Profile"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:11
+#: autodrop/templates/index.html:40
+msgid "User Administration"
+msgstr ""
+
+#: autodrop/templates/index.html:54
+msgid "Automated Ingestion"
+msgstr ""
+
+#: autodrop/templates/index.html:56
+msgid ""
+"Periodic supplier product feed synchronization, normalization, and "
+"catalog integration."
+msgstr ""
+
+#: autodrop/templates/index.html:64
+msgid "Real-Time Sync"
+msgstr ""
+
+#: autodrop/templates/index.html:66
+msgid ""
+"Intelligent inventory buffering prevents overselling by tracking supplier"
+" stock levels."
+msgstr ""
+
+#: autodrop/templates/index.html:74
+msgid "Instant Dispatch"
+msgstr ""
+
+#: autodrop/templates/index.html:76
+msgid ""
+"Zero manual intervention fulfillment routing and NAV-compliant automated "
+"invoicing."
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:3
+msgid "Edit User — AutoDrop Admin"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:10
+msgid "Back to Users"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:12
+msgid "Edit User:"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:18
+msgid "Deactivate User"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:22
+msgid "Activate User"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:31
+#: autodrop/templates/auth/forgot_password.html:14
+#: autodrop/templates/auth/login.html:18
+#: autodrop/templates/auth/register.html:27
+#: autodrop/templates/profile/index.html:35
+msgid "Email Address"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:38
+#: autodrop/templates/auth/register.html:15
+#: autodrop/templates/profile/index.html:42
+msgid "First Name"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:43
+#: autodrop/templates/auth/register.html:20
+#: autodrop/templates/profile/index.html:47
+msgid "Last Name"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:50
+#: autodrop/templates/auth/register.html:33
+#: autodrop/templates/profile/index.html:54
+msgid "Phone Number"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:57
+msgid "Status & Permissions"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:64
+msgid "Administrator Privileges"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:65
+msgid "Grants access to admin panels and user management."
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:73
+msgid "Account Active"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:74
+msgid "Allows the user to log in."
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:82
+msgid "Email Verified"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:83
+msgid "User has verified their email address."
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:91
+msgid "Cancel"
+msgstr ""
+
+#: autodrop/templates/admin/users/edit.html:94
+msgid "Save Changes"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:3
+msgid "User Management — AutoDrop Admin"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:13
+msgid "Inspect registered users, manage privileges, and update account statuses."
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:21
+msgid "Search by name or email..."
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:47
+msgid "All User Types"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:48
+msgid "Administrators Only"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:49
+msgid "Customers / Regular Users"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:61
+msgid "All Statuses"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:62
+msgid "Active & Verified"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:63
+#: autodrop/templates/admin/users/partials/user_table.html:38
+msgid "Unverified"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:64
+#: autodrop/templates/admin/users/partials/user_table.html:34
+msgid "Deactivated"
+msgstr ""
+
+#: autodrop/templates/admin/users/index.html:73
+msgid "Loading..."
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:5
+msgid "User"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:6
+msgid "Privilege / Type"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:7
+msgid "Status"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:8
+msgid "Contact"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:9
+msgid "Actions"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:22
+#: autodrop/templates/profile/index.html:15
+msgid "Administrator"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:26
+msgid "Customer"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:42
+msgid "Active"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:54
+msgid "Edit"
+msgstr ""
+
+#: autodrop/templates/admin/users/partials/user_table.html:62
+msgid "No users found matching the current criteria."
+msgstr ""
+
+#: autodrop/templates/auth/forgot_password.html:3
+msgid "Forgot Password — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/forgot_password.html:8
+msgid "Forgot Password?"
+msgstr ""
+
+#: autodrop/templates/auth/forgot_password.html:9
+msgid "Enter your email address to receive password reset instructions."
+msgstr ""
+
+#: autodrop/templates/auth/forgot_password.html:21
+msgid "Send Reset Link"
+msgstr ""
+
+#: autodrop/templates/auth/forgot_password.html:27
+msgid "Back to Sign In"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:3
+msgid "Sign In — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:8
+msgid "Sign In to AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:9
+msgid "Enter your credentials to access your account."
+msgstr ""
+
+#: autodrop/templates/auth/login.html:25
+msgid "Password"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:26
+msgid "Forgot password?"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:40
+msgid "Don't have an account?"
+msgstr ""
+
+#: autodrop/templates/auth/login.html:41
+msgid "Register now"
+msgstr ""
+
+#: autodrop/templates/auth/register.html:3
+msgid "Register — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/register.html:8
+msgid "Create Account"
+msgstr ""
+
+#: autodrop/templates/auth/register.html:9
+msgid "Register for AutoDrop dropshipping engine access."
+msgstr ""
+
+#: autodrop/templates/auth/register.html:39
+msgid "Password (min. 8 characters)"
+msgstr ""
+
+#: autodrop/templates/auth/register.html:46
+msgid "Register Account"
+msgstr ""
+
+#: autodrop/templates/auth/register.html:52
+msgid "Already have an account?"
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:3
+msgid "Reset Password — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:8
+msgid "Set New Password"
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:9
+msgid "Enter a new password for your AutoDrop account."
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:16
+msgid "New Password (min. 8 characters)"
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:22
+#: autodrop/templates/profile/index.html:86
+msgid "Confirm New Password"
+msgstr ""
+
+#: autodrop/templates/auth/reset_password.html:29
+msgid "Reset Password"
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:3
+msgid "Verify Email — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:12
+msgid "Check Your Email"
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:14
+msgid "We've sent a verification link to:"
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:20
+msgid ""
+"Please click the link in the email to activate your account and complete "
+"registration."
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:24
+msgid "Didn't receive the email?"
+msgstr ""
+
+#: autodrop/templates/auth/verify_notice.html:28
+msgid "Resend Verification Email"
+msgstr ""
+
+#: autodrop/templates/errors/404.html:3
+msgid "404 - Page Not Found"
+msgstr ""
+
+#: autodrop/templates/errors/404.html:3 autodrop/templates/errors/500.html:3
+msgid "AutoDrop"
+msgstr ""
+
+#: autodrop/templates/errors/404.html:12
+msgid "Page Not Found"
+msgstr ""
+
+#: autodrop/templates/errors/404.html:15
+msgid "The page you requested could not be found."
+msgstr ""
+
+#: autodrop/templates/errors/404.html:20 autodrop/templates/errors/500.html:20
+msgid "Return to Home"
+msgstr ""
+
+#: autodrop/templates/errors/500.html:3
+msgid "500 - Internal Server Error"
+msgstr ""
+
+#: autodrop/templates/errors/500.html:12
+msgid "Internal Server Error"
+msgstr ""
+
+#: autodrop/templates/errors/500.html:15
+msgid ""
+"An unexpected error occurred while processing your request. Please try "
+"again later."
+msgstr ""
+
+#: autodrop/templates/profile/index.html:3
+msgid "Profile — AutoDrop"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:9
+msgid "Account Profile"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:10
+msgid "Manage your personal information and security settings."
+msgstr ""
+
+#: autodrop/templates/profile/index.html:19
+msgid "Customer / User"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:30
+msgid "Personal Details"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:60
+msgid "Save Profile Changes"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:69
+msgid "Change Password"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:74
+msgid "Current Password"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:80
+msgid "New Password (min. 8 chars)"
+msgstr ""
+
+#: autodrop/templates/profile/index.html:92
+msgid "Update Password"
+msgstr ""
+

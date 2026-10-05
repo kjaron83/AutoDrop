@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("User Management — AutoDrop Admin") }}{% endblock %}
+
+{% block content %}
+<div class="space-y-6">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-6 border-b border-slate-800">
+        <div>
+            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-3">
+                <span>👥 {{ _("User Administration") }}</span>
+            </h1>
+            <p class="text-sm text-slate-400 mt-1">{{ _("Inspect registered users, manage privileges, and update account statuses.") }}</p>
+        </div>
+    </div>
+
+    <!-- Search and Filter Bar -->
+    <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col md:flex-row gap-4 items-center justify-between shadow-lg">
+        <!-- Search box -->
+        <div class="w-full md:w-80 relative">
+            <input type="search" id="search-input" name="search" value="{{ search }}" placeholder="{{ _('Search by name or email...') }}"
+                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+                hx-get="/admin/users/table"
+                hx-trigger="keyup changed delay:300ms, search"
+                hx-target="#user-table-container"
+                hx-swap="outerHTML"
+                hx-include="#admin-select, #status-select"
+                hx-indicator="#table-indicator">
+            <span class="absolute left-3.5 top-2.5 text-slate-500">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </span>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end">
+            <!-- Admin Role Filter -->
+            <select id="admin-select" name="is_admin"
+                class="px-3 py-2 text-sm rounded-lg bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                hx-get="/admin/users/table"
+                hx-trigger="change"
+                hx-target="#user-table-container"
+                hx-swap="outerHTML"
+                hx-include="#search-input, #status-select"
+                hx-indicator="#table-indicator">
+                <option value="" {% if not selected_admin %}selected{% endif %}>{{ _("All User Types") }}</option>
+                <option value="true" {% if selected_admin == 'true' %}selected{% endif %}>{{ _("Administrators Only") }}</option>
+                <option value="false" {% if selected_admin == 'false' %}selected{% endif %}>{{ _("Customers / Regular Users") }}</option>
+            </select>
+
+            <!-- Status Filter -->
+            <select id="status-select" name="status"
+                class="px-3 py-2 text-sm rounded-lg bg-slate-900 border border-slate-700 text-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                hx-get="/admin/users/table"
+                hx-trigger="change"
+                hx-target="#user-table-container"
+                hx-swap="outerHTML"
+                hx-include="#search-input, #admin-select"
+                hx-indicator="#table-indicator">
+                <option value="" {% if not selected_status %}selected{% endif %}>{{ _("All Statuses") }}</option>
+                <option value="active" {% if selected_status == 'active' %}selected{% endif %}>{{ _("Active & Verified") }}</option>
+                <option value="unverified" {% if selected_status == 'unverified' %}selected{% endif %}>{{ _("Unverified") }}</option>
+                <option value="inactive" {% if selected_status == 'inactive' %}selected{% endif %}>{{ _("Deactivated") }}</option>
+            </select>
+
+            <!-- HTMX loading spinner indicator -->
+            <div id="table-indicator" class="htmx-indicator text-xs text-emerald-400 flex items-center gap-1.5 px-2">
+                <svg class="animate-spin h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+                <span>{{ _("Loading...") }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Table Card -->
+    <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+        {% include "admin/users/partials/user_table.html" %}
+    </div>
+</div>
+{% endblock %}

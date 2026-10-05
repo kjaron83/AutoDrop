@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ get_current_locale() }}" class="h-full bg-slate-900 text-slate-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ _("AutoDrop Engine 🚀") }}{% endblock %}</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            accent: '#3b82f6',
+                            accentHover: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+    <style>
+        .htmx-indicator {
+            display: none;
+        }
+        .htmx-request .htmx-indicator {
+            display: inline-block;
+        }
+        .htmx-request.htmx-indicator {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="h-full flex flex-col antialiased selection:bg-emerald-500 selection:text-white">
+    <!-- Navbar -->
+    <header class="bg-slate-950/80 backdrop-blur border-b border-slate-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <a href="/" class="flex items-center gap-2 text-xl font-bold tracking-tight text-white hover:text-emerald-400 transition">
+                        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 text-sm font-black">⚡</span>
+                        <span>Auto<span class="text-emerald-400">Drop</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    {% if current_user %}
+                        <a href="/profile" class="text-slate-300 hover:text-white flex items-center gap-1 transition">
+                            <span>👤 {{ current_user.full_name }}</span>
+                        </a>
+                        {% if current_user.is_admin %}
+                            <a href="/admin/users" class="text-amber-400 hover:text-amber-300 flex items-center gap-1 transition">
+                                <span>👥 {{ _("Users") }}</span>
+                            </a>
+                        {% endif %}
+                        <div class="flex items-center gap-3 pl-4 border-l border-slate-800">
+                            <form action="/auth/logout" method="post" class="inline">
+                                <button type="submit" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition flex items-center gap-1.5">
+                                    <span>🚪</span>
+                                    <span>{{ _("Log Out") }}</span>
+                                </button>
+                            </form>
+                        </div>
+                    {% else %}
+                        <a href="/auth/login" class="text-slate-300 hover:text-white transition flex items-center gap-1.5">
+                            <span>🔑</span>
+                            <span>{{ _("Sign In") }}</span>
+                        </a>
+                        <a href="/auth/register" class="px-4 py-2 text-sm font-semibold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm transition flex items-center gap-1.5">
+                            <span>📝</span>
+                            <span>{{ _("Register") }}</span>
+                        </a>
+                    {% endif %}
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden items-center gap-3">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-400 hover:text-white p-2 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-800 bg-slate-950">
+            {% if current_user %}
+                <div class="py-2 text-xs text-slate-400 border-b border-slate-800">{{ current_user.full_name }} ({{ current_user.email }})</div>
+                <a href="/profile" class="block py-2 text-slate-300 hover:text-white">👤 {{ current_user.full_name }}</a>
+                {% if current_user.is_admin %}
+                    <a href="/admin/users" class="block py-2 text-amber-400 hover:text-amber-300">👥 {{ _("Users") }}</a>
+                {% endif %}
+
+                <form action="/auth/logout" method="post" class="pt-2">
+                    <button type="submit" class="w-full text-left py-2 text-rose-400 hover:text-rose-300 text-sm font-medium flex items-center gap-1.5">
+                        <span>🚪</span>
+                        <span>{{ _("Log Out") }}</span>
+                    </button>
+                </form>
+            {% else %}
+                <a href="/auth/login" class="block py-2 text-slate-300 hover:text-white flex items-center gap-1.5">
+                    <span>🔑</span>
+                    <span>{{ _("Sign In") }}</span>
+                </a>
+                <a href="/auth/register" class="block py-2 text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5">
+                    <span>📝</span>
+                    <span>{{ _("Register") }}</span>
+                </a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Flash message alerts -->
+    {% if error %}
+        <div class="max-w-4xl mx-auto w-full px-4 mt-4">
+            <div class="p-4 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-300 flex items-center gap-3">
+                <svg class="w-5 h-5 text-rose-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <div class="text-sm font-medium">{{ error }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if message %}
+        <div class="max-w-4xl mx-auto w-full px-4 mt-4">
+            <div class="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <div class="text-sm font-medium">{{ message }}</div>
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950/50 py-6 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>{{ _("AutoDrop Engine &copy; Headless Dropshipping E-Commerce Platform.") }}</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (menuBtn && menu) {
+            menuBtn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

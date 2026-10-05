@@ -1,0 +1,68 @@
+<div id="user-table-container" class="overflow-x-auto">
+    <table class="w-full text-left text-sm text-slate-300">
+        <thead class="bg-slate-900/80 text-xs uppercase tracking-wider text-slate-400 border-b border-slate-800">
+            <tr>
+                <th scope="col" class="px-6 py-4">{{ _("User") }}</th>
+                <th scope="col" class="px-6 py-4">{{ _("Privilege / Type") }}</th>
+                <th scope="col" class="px-6 py-4">{{ _("Status") }}</th>
+                <th scope="col" class="px-6 py-4">{{ _("Contact") }}</th>
+                <th scope="col" class="px-6 py-4 text-right">{{ _("Actions") }}</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-800/60">
+            {% for u in users %}
+                <tr class="hover:bg-slate-900/40 transition">
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="font-semibold text-white">{{ u.full_name }}</div>
+                        <div class="text-xs text-slate-400">{{ u.email }}</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        {% if u.is_admin %}
+                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                👑 {{ _("Administrator") }}
+                            </span>
+                        {% else %}
+                            <span class="px-2.5 py-0.5 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700">
+                                👤 {{ _("Customer") }}
+                            </span>
+                        {% endif %}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center gap-2">
+                            {% if not u.is_active %}
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                                    {{ _("Deactivated") }}
+                                </span>
+                            {% elif not u.is_verified %}
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                                    {{ _("Unverified") }}
+                                </span>
+                            {% else %}
+                                <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                    {{ _("Active") }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-400">
+                        {{ u.phone or '—' }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+                        <div class="flex items-center justify-end gap-2">
+                            <a href="/admin/users/{{ u.id }}"
+                               class="px-3 py-1 text-xs font-semibold rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+                                {{ _("Edit") }}
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5" class="px-6 py-12 text-center text-slate-500 text-sm">
+                        {{ _("No users found matching the current criteria.") }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

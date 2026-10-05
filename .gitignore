@@ -18,3 +18,6 @@ scripts/.git_user
 # Local SQLite databases
 *.db
 *.sqlite3
+
+# Temporary reference directories
+dojoroll/

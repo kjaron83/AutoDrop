@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Verify Email — AutoDrop") }}{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto my-8 p-8 bg-slate-950 border border-slate-800 rounded-2xl shadow-xl text-center space-y-6">
+    <div class="w-16 h-16 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-3xl">
+        ✉️
+    </div>
+
+    <div class="space-y-2">
+        <h1 class="text-2xl font-bold text-white tracking-tight">{{ _("Check Your Email") }}</h1>
+        <p class="text-sm text-slate-400">
+            {{ _("We've sent a verification link to:") }}
+        </p>
+        <p class="font-semibold text-emerald-400 text-base">{{ email }}</p>
+    </div>
+
+    <p class="text-xs text-slate-400">
+        {{ _("Please click the link in the email to activate your account and complete registration.") }}
+    </p>
+
+    <div class="pt-4 border-t border-slate-800">
+        <p class="text-xs text-slate-500 mb-3">{{ _("Didn't receive the email?") }}</p>
+        <form method="post" action="/auth/resend-verification" class="space-y-3">
+            <input type="hidden" name="email" value="{{ email }}">
+            <button type="submit" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700 transition">
+                🔄 {{ _("Resend Verification Email") }}
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

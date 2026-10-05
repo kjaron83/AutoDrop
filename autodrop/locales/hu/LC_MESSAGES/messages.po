@@ -1,0 +1,625 @@
+# Hungarian translations for AutoDrop.
+# Copyright (C) 2026 AutoDrop
+# This file is distributed under the same license as the AutoDrop project.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: AutoDrop 1.0\n"
+"Report-Msgid-Bugs-To: info@autodrop.local\n"
+"POT-Creation-Date: 2026-10-05 10:00+0200\n"
+"PO-Revision-Date: 2026-10-05 10:00+0200\n"
+"Last-Translator: AutoDrop Team\n"
+"Language: hu\n"
+"Language-Team: hu <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: autodrop/core/dependencies.py:55
+msgid "Authentication required"
+msgstr "Hitelesítés szükséges"
+
+#: autodrop/core/dependencies.py:67
+msgid "Access forbidden: Administrator privileges required."
+msgstr "Hozzáférés megtagadva: Adminisztrátori jogosultság szükséges."
+
+#: autodrop/core/validation.py:51 autodrop/core/validation.py:57
+#: autodrop/core/validation.py:120 autodrop/core/validation.py:126
+#, python-brace-format
+msgid "'{field}' is required."
+msgstr "'{field}' kitöltése kötelező."
+
+#: autodrop/core/validation.py:69
+#, python-brace-format
+msgid "'{field}' must be a valid number."
+msgstr "'{field}' érvényes szám kell legyen."
+
+#: autodrop/core/validation.py:80
+#, python-brace-format
+msgid "'{field}' must be a valid whole number."
+msgstr "'{field}' érvényes egész szám kell legyen."
+
+#: autodrop/core/validation.py:86
+#, python-brace-format
+msgid "'{field}' must be at least {min_val}."
+msgstr "'{field}' értéke legalább {min_val} kell legyen."
+
+#: autodrop/core/validation.py:92
+#, python-brace-format
+msgid "'{field}' must be at most {max_val}."
+msgstr "'{field}' értéke legfeljebb {max_val} lehet."
+
+#: autodrop/core/validation.py:135
+#, python-brace-format
+msgid "'{field}' must be a valid date in YYYY-MM-DD format."
+msgstr "'{field}' érvényes dátum kell legyen ÉÉÉÉ-HH-NN formátumban."
+
+#: autodrop/core/validation.py:149
+#, python-brace-format
+msgid "'{field}' must be a valid time in HH:MM format."
+msgstr "'{field}' érvényes időpont kell legyen ÓÓ:PP formátumban."
+
+#: autodrop/core/validation.py:157
+#, python-brace-format
+msgid "'{field}' must be a valid date and time."
+msgstr "'{field}' érvényes dátum és időpont kell legyen."
+
+#: autodrop/routes/admin_users.py:101 autodrop/routes/admin_users.py:129
+#: autodrop/routes/admin_users.py:162
+msgid "User not found."
+msgstr "A felhasználó nem található."
+
+#: autodrop/routes/admin_users.py:148
+#, python-format
+msgid "User '%(name)s' updated successfully."
+msgstr "'%(name)s' felhasználó sikeresen frissítve."
+
+#: autodrop/routes/auth.py:59 autodrop/routes/auth.py:278
+msgid "Password must be at least 8 characters long."
+msgstr "A jelszónak legalább 8 karakter hosszúnak kell lennie."
+
+#: autodrop/routes/auth.py:246
+msgid "Password reset link is invalid or has expired."
+msgstr "A jelszó-visszaállító hivatkozás érvénytelen vagy lejárt."
+
+#: autodrop/routes/auth.py:270 autodrop/routes/profile.py:81
+msgid "Passwords do not match."
+msgstr "A jelszavak nem egyeznek."
+
+#: autodrop/routes/profile.py:59
+msgid "Profile updated successfully."
+msgstr "A profil sikeresen frissítve."
+
+#: autodrop/services/auth.py:42
+msgid "An account with this email address already exists."
+msgstr "Ezzel az e-mail címmel már létezik felhasználói fiók."
+
+#: autodrop/services/auth.py:65
+msgid "Registration successful! Please check your email to verify your account."
+msgstr "A regisztráció sikeres! Kérjük, ellenőrizze az e-mail fiókját a hitelesítéshez."
+
+#: autodrop/services/auth.py:101
+msgid "Invalid or already used verification token."
+msgstr "Érvénytelen vagy már felhasznált hitelesítési token."
+
+#: autodrop/services/auth.py:104
+msgid "This verification link has expired. Please request a new one."
+msgstr "Ez a hitelesítési hivatkozás lejárt. Kérjük, igényeljen újat."
+
+#: autodrop/services/auth.py:112
+msgid "Your email has been successfully verified! You can now log in."
+msgstr "Az e-mail címe sikeresen megerősítve! Most már bejelentkezhet."
+
+#: autodrop/services/auth.py:120
+msgid "If an account exists with this email, a verification link has been sent."
+msgstr "Amennyiben létezik fiók ezzel a címmel, elküldtük a megerősítő hivatkozást."
+
+#: autodrop/services/auth.py:123
+msgid "This account is already verified. You can log in."
+msgstr "Ez a fiók már meg van erősítve. Bejelentkezhet."
+
+#: autodrop/services/auth.py:131
+msgid "A new verification link has been sent to your email."
+msgstr "Új megerősítő hivatkozást küldtünk az e-mail címére."
+
+#: autodrop/services/auth.py:142
+msgid "Invalid email or password."
+msgstr "Érvénytelen e-mail cím vagy jelszó."
+
+#: autodrop/services/auth.py:145
+msgid "Your account has been deactivated. Please contact the administrator."
+msgstr "A fiókja inaktiválva lett. Kérjük, vegye fel a kapcsolatot az adminisztrátorral."
+
+#: autodrop/services/auth.py:148
+msgid "Your email is not verified. Please check your inbox or request a new link."
+msgstr "Az e-mail címe nincs megerősítve. Kérjük, ellenőrizze bejövő üzeneteit vagy kérjen új hivatkozást."
+
+#: autodrop/services/auth.py:157 autodrop/services/auth.py:182
+msgid ""
+"If an account exists with this email, password reset instructions have "
+"been sent."
+msgstr "Amennyiben létezik fiók ezzel a címmel, elküldtük a jelszó-visszaállítási útmutatót."
+
+#: autodrop/services/auth.py:202
+msgid "This password reset link is invalid or has expired."
+msgstr "A jelszó-visszaállító hivatkozás érvénytelen vagy lejárt."
+
+#: autodrop/services/auth.py:209
+msgid "Your password has been reset successfully. You can now log in."
+msgstr "A jelszava sikeresen megváltozott. Most már bejelentkezhet."
+
+#: autodrop/services/auth.py:220
+msgid "Incorrect current password."
+msgstr "Helytelen jelenlegi jelszó."
+
+#: autodrop/services/auth.py:223
+msgid "New password must be at least 8 characters long."
+msgstr "Az új jelszónak legalább 8 karakter hosszúnak kell lennie."
+
+#: autodrop/services/auth.py:227
+msgid "Your password has been changed successfully."
+msgstr "A jelszava sikeresen megváltozott."
+
+#: autodrop/templates/base.html:6
+msgid "AutoDrop Engine 🚀"
+msgstr "AutoDrop Motor 🚀"
+
+#: autodrop/templates/base.html:66 autodrop/templates/base.html:106
+msgid "Users"
+msgstr "Felhasználók"
+
+#: autodrop/templates/base.html:73 autodrop/templates/base.html:112
+msgid "Log Out"
+msgstr "Kijelentkezés"
+
+#: autodrop/templates/auth/login.html:34
+#: autodrop/templates/auth/register.html:53 autodrop/templates/base.html:80
+#: autodrop/templates/base.html:118 autodrop/templates/index.html:28
+msgid "Sign In"
+msgstr "Bejelentkezés"
+
+#: autodrop/templates/base.html:84 autodrop/templates/base.html:122
+msgid "Register"
+msgstr "Regisztráció"
+
+#: autodrop/templates/base.html:159
+msgid "AutoDrop Engine &copy; Headless Dropshipping E-Commerce Platform."
+msgstr "AutoDrop Engine &copy; Headless Dropshipping E-Kereskedelmi Platform."
+
+#: autodrop/templates/index.html:3
+msgid "AutoDrop Engine 🚀 — Headless Dropshipping Platform"
+msgstr "AutoDrop Engine 🚀 — Headless Dropshipping Platform"
+
+#: autodrop/templates/index.html:11
+msgid "Zero-Admin Headless Dropshipping Node"
+msgstr "Adminisztrációmentes Headless Dropshipping Motor"
+
+#: autodrop/templates/index.html:15
+msgid "Next-Generation"
+msgstr "Új Generációs"
+
+#: autodrop/templates/index.html:15
+msgid "E-Commerce Engine"
+msgstr "E-Kereskedelmi Rendszer"
+
+#: autodrop/templates/index.html:19
+msgid ""
+"Automated catalog ingestion, real-time inventory buffering, instant order"
+" dispatch, and fiscal compliance designed for high-performance CEE "
+"commerce."
+msgstr "Automatizált katalógus betöltés, valós idejű készlet-szinkronizáció, azonnali rendeléstovábbítás és számlázás a közép-kelet-európai piacra."
+
+#: autodrop/templates/index.html:25
+msgid "Get Started"
+msgstr "Kezdés"
+
+#: autodrop/templates/index.html:33
+msgid "Welcome back,"
+msgstr "Üdvözöljük,"
+
+#: autodrop/templates/index.html:36
+msgid "Edit Profile"
+msgstr "Profil szerkesztése"
+
+#: autodrop/templates/admin/users/index.html:11
+#: autodrop/templates/index.html:40
+msgid "User Administration"
+msgstr "Felhasználókezelés"
+
+#: autodrop/templates/index.html:54
+msgid "Automated Ingestion"
+msgstr "Automatizált Adatbetöltés"
+
+#: autodrop/templates/index.html:56
+msgid ""
+"Periodic supplier product feed synchronization, normalization, and "
+"catalog integration."
+msgstr "Beszállítói termékfeedek időzített lekérdezése, normalizálása és automatikus katalógusba illesztése."
+
+#: autodrop/templates/index.html:64
+msgid "Real-Time Sync"
+msgstr "Valós Idejű Szinkronizáció"
+
+#: autodrop/templates/index.html:66
+msgid ""
+"Intelligent inventory buffering prevents overselling by tracking supplier"
+" stock levels."
+msgstr "Intelligens készletpufferezés a túlértékesítés megelőzésére a beszállítói szintek alapján."
+
+#: autodrop/templates/index.html:74
+msgid "Instant Dispatch"
+msgstr "Azonnali Továbbítás"
+
+#: autodrop/templates/index.html:76
+msgid ""
+"Zero manual intervention fulfillment routing and NAV-compliant automated "
+"invoicing."
+msgstr "Teljesen kézi beavatkozástól mentes rendelésteljesítés és automatikus NAV-kompatibilis számlázás."
+
+#: autodrop/templates/admin/users/edit.html:3
+msgid "Edit User — AutoDrop Admin"
+msgstr "Felhasználó szerkesztése — AutoDrop Admin"
+
+#: autodrop/templates/admin/users/edit.html:10
+msgid "Back to Users"
+msgstr "Vissza a felhasználókhoz"
+
+#: autodrop/templates/admin/users/edit.html:12
+msgid "Edit User:"
+msgstr "Felhasználó szerkesztése:"
+
+#: autodrop/templates/admin/users/edit.html:18
+msgid "Deactivate User"
+msgstr "Felhasználó inaktiválása"
+
+#: autodrop/templates/admin/users/edit.html:22
+msgid "Activate User"
+msgstr "Felhasználó aktiválása"
+
+#: autodrop/templates/admin/users/edit.html:31
+#: autodrop/templates/auth/forgot_password.html:14
+#: autodrop/templates/auth/login.html:18
+#: autodrop/templates/auth/register.html:27
+#: autodrop/templates/profile/index.html:35
+msgid "Email Address"
+msgstr "E-mail cím"
+
+#: autodrop/templates/admin/users/edit.html:38
+#: autodrop/templates/auth/register.html:15
+#: autodrop/templates/profile/index.html:42
+msgid "First Name"
+msgstr "Keresztnév"
+
+#: autodrop/templates/admin/users/edit.html:43
+#: autodrop/templates/auth/register.html:20
+#: autodrop/templates/profile/index.html:47
+msgid "Last Name"
+msgstr "Vezetéknév"
+
+#: autodrop/templates/admin/users/edit.html:50
+#: autodrop/templates/auth/register.html:33
+#: autodrop/templates/profile/index.html:54
+msgid "Phone Number"
+msgstr "Telefonszám"
+
+#: autodrop/templates/admin/users/edit.html:57
+msgid "Status & Permissions"
+msgstr "Állapot & Jogosultságok"
+
+#: autodrop/templates/admin/users/edit.html:64
+msgid "Administrator Privileges"
+msgstr "Adminisztrátori jogosultság"
+
+#: autodrop/templates/admin/users/edit.html:65
+msgid "Grants access to admin panels and user management."
+msgstr "Hozzáférést biztosít az adminisztrációs felülethez és a felhasználók kezeléséhez."
+
+#: autodrop/templates/admin/users/edit.html:73
+msgid "Account Active"
+msgstr "Aktív felhasználói fiók"
+
+#: autodrop/templates/admin/users/edit.html:74
+msgid "Allows the user to log in."
+msgstr "Engedélyezi a felhasználó bejelentkezését."
+
+#: autodrop/templates/admin/users/edit.html:82
+msgid "Email Verified"
+msgstr "E-mail cím megerősítve"
+
+#: autodrop/templates/admin/users/edit.html:83
+msgid "User has verified their email address."
+msgstr "A felhasználó megerősítette az e-mail címét."
+
+#: autodrop/templates/admin/users/edit.html:91
+msgid "Cancel"
+msgstr "Mégse"
+
+#: autodrop/templates/admin/users/edit.html:94
+msgid "Save Changes"
+msgstr "Módosítások mentése"
+
+#: autodrop/templates/admin/users/index.html:3
+msgid "User Management — AutoDrop Admin"
+msgstr "Felhasználókezelés — AutoDrop Admin"
+
+#: autodrop/templates/admin/users/index.html:13
+msgid "Inspect registered users, manage privileges, and update account statuses."
+msgstr "Regisztrált felhasználók megtekintése, jogosultságok és fiókállapotok kezelése."
+
+#: autodrop/templates/admin/users/index.html:21
+msgid "Search by name or email..."
+msgstr "Keresés név vagy e-mail cím alapján..."
+
+#: autodrop/templates/admin/users/index.html:47
+msgid "All User Types"
+msgstr "Minden felhasználói típus"
+
+#: autodrop/templates/admin/users/index.html:48
+msgid "Administrators Only"
+msgstr "Csak adminisztrátorok"
+
+#: autodrop/templates/admin/users/index.html:49
+msgid "Customers / Regular Users"
+msgstr "Vásárlók / Normál felhasználók"
+
+#: autodrop/templates/admin/users/index.html:61
+msgid "All Statuses"
+msgstr "Minden állapot"
+
+#: autodrop/templates/admin/users/index.html:62
+msgid "Active & Verified"
+msgstr "Aktív & Megerősített"
+
+#: autodrop/templates/admin/users/index.html:63
+#: autodrop/templates/admin/users/partials/user_table.html:38
+msgid "Unverified"
+msgstr "Nem megerősített"
+
+#: autodrop/templates/admin/users/index.html:64
+#: autodrop/templates/admin/users/partials/user_table.html:34
+msgid "Deactivated"
+msgstr "Inaktivált"
+
+#: autodrop/templates/admin/users/index.html:73
+msgid "Loading..."
+msgstr "Betöltés..."
+
+#: autodrop/templates/admin/users/partials/user_table.html:5
+msgid "User"
+msgstr "Felhasználó"
+
+#: autodrop/templates/admin/users/partials/user_table.html:6
+msgid "Privilege / Type"
+msgstr "Jogosultság / Típus"
+
+#: autodrop/templates/admin/users/partials/user_table.html:7
+msgid "Status"
+msgstr "Állapot"
+
+#: autodrop/templates/admin/users/partials/user_table.html:8
+msgid "Contact"
+msgstr "Kapcsolat"
+
+#: autodrop/templates/admin/users/partials/user_table.html:9
+msgid "Actions"
+msgstr "Műveletek"
+
+#: autodrop/templates/admin/users/partials/user_table.html:22
+#: autodrop/templates/profile/index.html:15
+msgid "Administrator"
+msgstr "Adminisztrátor"
+
+#: autodrop/templates/admin/users/partials/user_table.html:26
+msgid "Customer"
+msgstr "Vásárló"
+
+#: autodrop/templates/admin/users/partials/user_table.html:42
+msgid "Active"
+msgstr "Aktív"
+
+#: autodrop/templates/admin/users/partials/user_table.html:54
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: autodrop/templates/admin/users/partials/user_table.html:62
+msgid "No users found matching the current criteria."
+msgstr "Nem található a feltételeknek megfelelő felhasználó."
+
+#: autodrop/templates/auth/forgot_password.html:3
+msgid "Forgot Password — AutoDrop"
+msgstr "Elfelejtett jelszó — AutoDrop"
+
+#: autodrop/templates/auth/forgot_password.html:8
+msgid "Forgot Password?"
+msgstr "Elfelejtette a jelszavát?"
+
+#: autodrop/templates/auth/forgot_password.html:9
+msgid "Enter your email address to receive password reset instructions."
+msgstr "Adja meg e-mail címét a jelszó-visszaállítási útmutató fogadásához."
+
+#: autodrop/templates/auth/forgot_password.html:21
+msgid "Send Reset Link"
+msgstr "Visszaállító link küldése"
+
+#: autodrop/templates/auth/forgot_password.html:27
+msgid "Back to Sign In"
+msgstr "Vissza a bejelentkezéshez"
+
+#: autodrop/templates/auth/login.html:3
+msgid "Sign In — AutoDrop"
+msgstr "Bejelentkezés — AutoDrop"
+
+#: autodrop/templates/auth/login.html:8
+msgid "Sign In to AutoDrop"
+msgstr "Bejelentkezés az AutoDrop fiókba"
+
+#: autodrop/templates/auth/login.html:9
+msgid "Enter your credentials to access your account."
+msgstr "Adja meg belépési adatait fiókja eléréséhez."
+
+#: autodrop/templates/auth/login.html:25
+msgid "Password"
+msgstr "Jelszó"
+
+#: autodrop/templates/auth/login.html:26
+msgid "Forgot password?"
+msgstr "Elfelejtette jelszavát?"
+
+#: autodrop/templates/auth/login.html:40
+msgid "Don't have an account?"
+msgstr "Még nincs fiókja?"
+
+#: autodrop/templates/auth/login.html:41
+msgid "Register now"
+msgstr "Regisztráljon most"
+
+#: autodrop/templates/auth/register.html:3
+msgid "Register — AutoDrop"
+msgstr "Regisztráció — AutoDrop"
+
+#: autodrop/templates/auth/register.html:8
+msgid "Create Account"
+msgstr "Fiók létrehozása"
+
+#: autodrop/templates/auth/register.html:9
+msgid "Register for AutoDrop dropshipping engine access."
+msgstr "Regisztráljon az AutoDrop dropshipping motorhoz való hozzáféréshez."
+
+#: autodrop/templates/auth/register.html:39
+msgid "Password (min. 8 characters)"
+msgstr "Jelszó (legalább 8 karakter)"
+
+#: autodrop/templates/auth/register.html:46
+msgid "Register Account"
+msgstr "Fiók regisztrálása"
+
+#: autodrop/templates/auth/register.html:52
+msgid "Already have an account?"
+msgstr "Már van felhasználói fiókja?"
+
+#: autodrop/templates/auth/reset_password.html:3
+msgid "Reset Password — AutoDrop"
+msgstr "Jelszó visszaállítása — AutoDrop"
+
+#: autodrop/templates/auth/reset_password.html:8
+msgid "Set New Password"
+msgstr "Új jelszó megadása"
+
+#: autodrop/templates/auth/reset_password.html:9
+msgid "Enter a new password for your AutoDrop account."
+msgstr "Adjon meg egy új jelszót az AutoDrop fiókjához."
+
+#: autodrop/templates/auth/reset_password.html:16
+msgid "New Password (min. 8 characters)"
+msgstr "Új jelszó (legalább 8 karakter)"
+
+#: autodrop/templates/auth/reset_password.html:22
+#: autodrop/templates/profile/index.html:86
+msgid "Confirm New Password"
+msgstr "Új jelszó megerősítése"
+
+#: autodrop/templates/auth/reset_password.html:29
+msgid "Reset Password"
+msgstr "Jelszó visszaállítása"
+
+#: autodrop/templates/auth/verify_notice.html:3
+msgid "Verify Email — AutoDrop"
+msgstr "E-mail megerősítése — AutoDrop"
+
+#: autodrop/templates/auth/verify_notice.html:12
+msgid "Check Your Email"
+msgstr "Ellenőrizze az e-mail fiókját"
+
+#: autodrop/templates/auth/verify_notice.html:14
+msgid "We've sent a verification link to:"
+msgstr "Megerősítő hivatkozást küldtünk a következő címre:"
+
+#: autodrop/templates/auth/verify_notice.html:20
+msgid ""
+"Please click the link in the email to activate your account and complete "
+"registration."
+msgstr "Kérjük, kattintson az e-mailben található hivatkozásra a fiók aktiválásához."
+
+#: autodrop/templates/auth/verify_notice.html:24
+msgid "Didn't receive the email?"
+msgstr "Nem kapta meg az e-mailt?"
+
+#: autodrop/templates/auth/verify_notice.html:28
+msgid "Resend Verification Email"
+msgstr "Megerősítő e-mail újraküldése"
+
+#: autodrop/templates/errors/404.html:3
+msgid "404 - Page Not Found"
+msgstr "404 - Az oldal nem található"
+
+#: autodrop/templates/errors/404.html:3 autodrop/templates/errors/500.html:3
+msgid "AutoDrop"
+msgstr "AutoDrop"
+
+#: autodrop/templates/errors/404.html:12
+msgid "Page Not Found"
+msgstr "Az oldal nem található"
+
+#: autodrop/templates/errors/404.html:15
+msgid "The page you requested could not be found."
+msgstr "A kért oldal nem található a rendszerben."
+
+#: autodrop/templates/errors/404.html:20 autodrop/templates/errors/500.html:20
+msgid "Return to Home"
+msgstr "Vissza a kezdőlapra"
+
+#: autodrop/templates/errors/500.html:3
+msgid "500 - Internal Server Error"
+msgstr "500 - Belső szerverhiba"
+
+#: autodrop/templates/errors/500.html:12
+msgid "Internal Server Error"
+msgstr "Belső szerverhiba"
+
+#: autodrop/templates/errors/500.html:15
+msgid ""
+"An unexpected error occurred while processing your request. Please try "
+"again later."
+msgstr "Váratlan hiba történt a kérés feldolgozása során. Kérjük, próbálja újra később."
+
+#: autodrop/templates/profile/index.html:3
+msgid "Profile — AutoDrop"
+msgstr "Profil — AutoDrop"
+
+#: autodrop/templates/profile/index.html:9
+msgid "Account Profile"
+msgstr "Felhasználói profil"
+
+#: autodrop/templates/profile/index.html:10
+msgid "Manage your personal information and security settings."
+msgstr "Személyes adatok és biztonsági beállítások kezelése."
+
+#: autodrop/templates/profile/index.html:19
+msgid "Customer / User"
+msgstr "Vásárló / Felhasználó"
+
+#: autodrop/templates/profile/index.html:30
+msgid "Personal Details"
+msgstr "Személyes adatok"
+
+#: autodrop/templates/profile/index.html:60
+msgid "Save Profile Changes"
+msgstr "Profil mentése"
+
+#: autodrop/templates/profile/index.html:69
+msgid "Change Password"
+msgstr "Jelszó megváltoztatása"
+
+#: autodrop/templates/profile/index.html:74
+msgid "Current Password"
+msgstr "Jelenlegi jelszó"
+
+#: autodrop/templates/profile/index.html:80
+msgid "New Password (min. 8 chars)"
+msgstr "Új jelszó (min. 8 karakter)"
+
+#: autodrop/templates/profile/index.html:92
+msgid "Update Password"
+msgstr "Jelszó frissítése"

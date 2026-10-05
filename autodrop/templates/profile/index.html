@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("Profile — AutoDrop") }}{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-8">
+    <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+        <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">{{ _("Account Profile") }}</h1>
+            <p class="text-sm text-slate-400">{{ _("Manage your personal information and security settings.") }}</p>
+        </div>
+        <div class="flex items-center gap-2">
+            {% if user.is_admin %}
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    👑 {{ _("Administrator") }}
+                </span>
+            {% else %}
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                    👤 {{ _("Customer / User") }}
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Profile details form -->
+        <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl space-y-6">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <span>👤</span>
+                <span>{{ _("Personal Details") }}</span>
+            </h2>
+
+            <form method="post" action="/profile" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">{{ _("Email Address") }}</label>
+                    <input type="text" value="{{ user.email }}" disabled
+                           class="w-full px-4 py-2.5 rounded-lg bg-slate-900/50 border border-slate-800 text-slate-400 cursor-not-allowed text-sm">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="first_name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("First Name") }} *</label>
+                        <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required
+                               class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                    </div>
+                    <div>
+                        <label for="last_name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("Last Name") }} *</label>
+                        <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required
+                               class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("Phone Number") }}</label>
+                    <input type="tel" id="phone" name="phone" value="{{ user.phone or '' }}" placeholder="+36 30 123 4567"
+                           class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                </div>
+
+                <button type="submit" class="w-full py-2.5 mt-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition text-sm">
+                    {{ _("Save Profile Changes") }}
+                </button>
+            </form>
+        </div>
+
+        <!-- Password change form -->
+        <div class="p-6 bg-slate-950 border border-slate-800 rounded-2xl space-y-6">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <span>🔐</span>
+                <span>{{ _("Change Password") }}</span>
+            </h2>
+
+            <form method="post" action="/profile/change-password" class="space-y-4">
+                <div>
+                    <label for="current_password" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("Current Password") }}</label>
+                    <input type="password" id="current_password" name="current_password" required
+                           class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                </div>
+
+                <div>
+                    <label for="new_password" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("New Password (min. 8 chars)") }}</label>
+                    <input type="password" id="new_password" name="new_password" minlength="8" required
+                           class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                </div>
+
+                <div>
+                    <label for="confirm_password" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">{{ _("Confirm New Password") }}</label>
+                    <input type="password" id="confirm_password" name="confirm_password" minlength="8" required
+                           class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition text-sm">
+                </div>
+
+                <button type="submit" class="w-full py-2.5 mt-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold transition text-sm">
+                    {{ _("Update Password") }}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

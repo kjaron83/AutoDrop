@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _("AutoDrop Engine 🚀 — Headless Dropshipping Platform") }}{% endblock %}
+
+{% block content %}
+<div class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <!-- Hero Section -->
+    <div class="text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+            <span>⚡</span>
+            <span>{{ _("Zero-Admin Headless Dropshipping Node") }}</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            {{ _("Next-Generation") }} <span class="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">{{ _("E-Commerce Engine") }}</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-lg text-slate-400 leading-relaxed">
+            {{ _("Automated catalog ingestion, real-time inventory buffering, instant order dispatch, and fiscal compliance designed for high-performance CEE commerce.") }}
+        </p>
+
+        {% if not current_user %}
+            <div class="flex items-center justify-center gap-4 pt-4">
+                <a href="/auth/register" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-lg shadow-emerald-600/20 transition transform hover:-translate-y-0.5">
+                    {{ _("Get Started") }}
+                </a>
+                <a href="/auth/login" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold transition">
+                    {{ _("Sign In") }}
+                </a>
+            </div>
+        {% else %}
+            <div class="pt-4">
+                <p class="text-slate-300">{{ _("Welcome back,") }} <strong class="text-white">{{ current_user.full_name }}</strong>!</p>
+                <div class="flex justify-center gap-4 mt-4">
+                    <a href="/profile" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium transition">
+                        👤 {{ _("Edit Profile") }}
+                    </a>
+                    {% if current_user.is_admin %}
+                        <a href="/admin/users" class="px-5 py-2.5 rounded-lg bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 border border-amber-500/30 font-medium transition">
+                            👥 {{ _("User Administration") }}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+        <div class="p-6 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl text-emerald-400">
+                📦
+            </div>
+            <h3 class="text-lg font-bold text-white">{{ _("Automated Ingestion") }}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                {{ _("Periodic supplier product feed synchronization, normalization, and catalog integration.") }}
+            </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl text-emerald-400">
+                🔄
+            </div>
+            <h3 class="text-lg font-bold text-white">{{ _("Real-Time Sync") }}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                {{ _("Intelligent inventory buffering prevents overselling by tracking supplier stock levels.") }}
+            </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-950/60 border border-slate-800/80 hover:border-slate-700 transition space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl text-emerald-400">
+                🚀
+            </div>
+            <h3 class="text-lg font-bold text-white">{{ _("Instant Dispatch") }}</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+                {{ _("Zero manual intervention fulfillment routing and NAV-compliant automated invoicing.") }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
